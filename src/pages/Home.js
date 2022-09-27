@@ -1,10 +1,38 @@
 import React from "react";
-
+import {
+  CssIcon,
+  HtmlIcon,
+  FigmaIcon,
+  JsIcon,
+  ArrowIcon,
+} from "../components/iconssvg/icons";
+import profileimg from "../images/profileimg.png";
 function Home() {
   return (
-    <div>
-      <h1 className="blue">HOME</h1>
-    </div>
+    <section className="home">
+      <div className="homeBanner">
+        <img
+          src={profileimg}
+          className="profile_img"
+          alt="profile Image of portfolio"
+        />
+
+        <div className="intro-text">
+          <h2 className="title">
+            Hei, velkomen til min <span>portfolio</span>!
+          </h2>
+          <div>
+            <div className="icons">
+              <HtmlIcon />
+              <CssIcon />
+              <JsIcon />
+              <FigmaIcon />
+            </div>
+            <ArrowIcon />
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
 

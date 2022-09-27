@@ -79,3 +79,51 @@
   color: blue;
   border-top: 2px solid rgb(227, 142, 57);
 }
+
+/*Home page*/
+.homeBanner{
+  background-image: url("./images/3dcube.gif");
+  width: 100%;
+  height: 95vh;
+  background-position: center ;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.intro-text{
+  width: min-content;
+  margin: 0 0 0 90px;
+}
+
+.profile_img{
+ width:  250px;
+ height: 250px;
+ transform: rotate(-25deg);
+ border-radius: 20px;
+ box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.title{
+  font-size: 45px;
+  text-shadow: 1px 1px 0px #ff0000;
+  
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+  white-space: normal;
+  margin-bottom: 10px;
+}
+
+.title span{
+  color: #613f0d;
+}
+
+.icons{
+  display: flex;
+  justify-content: space-evenly;
+  margin: 15px 0;
+}
+
