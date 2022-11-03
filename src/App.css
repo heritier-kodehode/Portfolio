@@ -5,6 +5,9 @@
 }
 .App {
   text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .App-logo {
@@ -50,7 +53,7 @@
   color: blue;
 }
 
-
+/* navbar */
 
 .navbar{
   display: flex;
@@ -127,3 +130,74 @@
   margin: 15px 0;
 }
 
+/* About me */
+
+#about{
+  color: #0002FE;
+  background: #B2FFF5;
+  filter: grayscale(60%);
+  padding: 50px 0;
+}
+
+.bigTitle{
+  color: #0002FE;
+  font-size: 60px;
+  margin: 0 0 0 100px;
+}
+
+.costumeParagraph{
+  width: 50%;
+  margin: 30px auto;
+  font-size: 27px;
+  line-height: 1.7;
+}
+
+/* 
+svg arrows
+*/
+
+.arrowsSvg{
+  
+}
+
+/* hihglighted projects */
+
+#highlight{
+
+  background: #B2FFF5;
+  padding: 100px 0 0 0;
+}
+.project-s-Container{
+  min-width: 60%;
+  max-width: 80%;
+  height: min-content;
+  
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+
+.projectContainer{
+
+}
+
+.projectImg{
+
+}
+
+.projectLink{
+
+}
+
+.projectDemo{
+  height: 500px;
+  width: 300px;
+  margin: 80px auto;
+  border:  5px solid orange;
+}
+
+.projectImg{
+  width: 100%;
+  height: 100%;
+}
