@@ -55,6 +55,14 @@
 
 /* navbar */
 
+.header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #B2FFF5;
+}
+
 .navbar{
   display: flex;
   justify-content: flex-end;
@@ -74,14 +82,7 @@
   color: blue;
   
 }
-.navbar button{
-  font-size: 32px;
-  border: none;
-  cursor: pointer;
-  background: transparent;
-  color: blue;
-  border-top: 2px solid rgb(227, 142, 57);
-}
+
 
 /*Home page*/
 .homeBanner{
@@ -118,10 +119,12 @@
   hyphens: auto;
   white-space: normal;
   margin-bottom: 10px;
+  text-align: end;
 }
 
 .title span{
   color: #613f0d;
+
 }
 
 .icons{

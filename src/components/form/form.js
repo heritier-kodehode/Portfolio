@@ -1,6 +1,8 @@
-import React, { useEffect, useContext } from "react";
+import React, { useEffect, useContext, useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
 import { Context } from "../../App";
 import styled from "styled-components";
+import { SocialIcons, ThumbsUp } from "../iconssvg/icons";
 
 const FormContainer = styled.div`
   background-color: lightblue;
@@ -73,47 +75,83 @@ const Cross = styled.button`
     cursor: pointer;
   }
 `;
+const ContactIcons = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+`;
 function Form() {
-  const showOrHide = useContext(Context);
-  console.log(showOrHide);
+  const { setShowContact, showContact, langData } = useContext(Context);
+  const form = useRef();
+  const [showThumbs, setShowThumbs] = useState(false);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_69crlpm",
+        "template_1vbi9lb",
+        form.current,
+        "WL068qR-rnETie1QZ"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          document.querySelector("#username").value = "";
+          document.querySelector("#useremail").value = "";
+          document.querySelector("#message").value = "";
+
+          setShowThumbs(!showThumbs);
+          setTimeout(function () {
+            setShowContact(false);
+            setShowThumbs(false);
+          }, 2500);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
   return (
-    <FormContainer showOrHideStatus={showOrHide.showContact}>
-      <OurForm>
+    <FormContainer showOrHideStatus={showContact}>
+      <ThumbsUp showThumbs={showThumbs} />
+      <OurForm ref={form} onSubmit={sendEmail}>
         <Title>
-          Contact Me
+          {langData.contactMeForm[0].text}
           <Cross
             onClick={() => {
-              showOrHide.setShowContact(!showOrHide.showContact);
+              setShowContact(!showContact);
             }}
           >
             X
           </Cross>
         </Title>
-        <Label htmlFor="username">Name:</Label>
+        <SocialIcons />
+        <Label htmlFor="username">{langData.contactMeForm[1].text}:</Label>
         <Input
           type="text"
           id="username"
-          name="username"
-          placeholder="Please Enter Your Name"
+          name="user_name"
+          placeholder={langData.contactMeForm[4].text}
           required
         />
-        <Label htmlFor="useremail">Email:</Label>
+        <Label htmlFor="useremail">{langData.contactMeForm[2].text}:</Label>
         <Input
           type="text"
           id="useremail"
-          name="useremail"
-          placeholder="Please Enter Your Email"
+          name="user_email"
+          placeholder={langData.contactMeForm[5].text}
           required
         />
-        <Label htmlFor="message">Message:</Label>
+        <Label htmlFor="message">{langData.contactMeForm[3].text}:</Label>
         <Textarea
-          placeholder="...Enter Your Message"
+          placeholder={langData.contactMeForm[6].text}
           name="message"
           id="message"
           cols="30"
           rows="10"
         ></Textarea>
-        <FormBtn>Send Message</FormBtn>
+        <FormBtn>{langData.contactMeForm[7].text}</FormBtn>
       </OurForm>
     </FormContainer>
   );

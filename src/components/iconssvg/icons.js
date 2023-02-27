@@ -1,5 +1,7 @@
 import React from "react";
-
+import { useState, useContext } from "react";
+import styled from "styled-components";
+import { Context } from "../../App";
 function HtmlIcon() {
   return (
     <div>
@@ -255,4 +257,102 @@ function Arrows() {
   );
 }
 
-export { CssIcon, HtmlIcon, FigmaIcon, JsIcon, ArrowIcon, Arrows };
+const SocialDiv = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+`;
+const SocialLink = styled.a`
+  border: 6px solid red;
+  background-color: white;
+  padding: 8px;
+  &:hover {
+    background-color: lightcyan;
+  }
+`;
+
+function SocialIcons() {
+  return (
+    <SocialDiv>
+      <SocialLink href="https://www.linkedin.com/in/heritier-z-a-968189249/">
+        <svg
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M29.1429 1.71428H2.85714C2.22499 1.71428 1.71428 2.22499 1.71428 2.85714V29.1429C1.71428 29.775 2.22499 30.2857 2.85714 30.2857H29.1429C29.775 30.2857 30.2857 29.775 30.2857 29.1429V2.85714C30.2857 2.22499 29.775 1.71428 29.1429 1.71428ZM10.1893 26.0607H5.94999V12.425H10.1893V26.0607ZM8.07142 10.5607C7.58545 10.5607 7.11038 10.4166 6.70631 10.1466C6.30223 9.87661 5.98729 9.49286 5.80132 9.04387C5.61534 8.59489 5.56668 8.10084 5.66149 7.6242C5.7563 7.14756 5.99032 6.70974 6.33396 6.3661C6.6776 6.02247 7.11542 5.78844 7.59206 5.69364C8.0687 5.59883 8.56275 5.64749 9.01173 5.83346C9.46071 6.01944 9.84447 6.33437 10.1145 6.73845C10.3845 7.14252 10.5286 7.61759 10.5286 8.10356C10.525 9.46071 9.42499 10.5607 8.07142 10.5607ZM26.0607 26.0607H21.825V19.4286C21.825 17.8464 21.7964 15.8143 19.6214 15.8143C17.4179 15.8143 17.0786 17.5357 17.0786 19.3143V26.0607H12.8464V12.425H16.9107V14.2893H16.9679C17.5321 13.2179 18.9143 12.0857 20.9786 12.0857C25.2714 12.0857 26.0607 14.9107 26.0607 18.5821V26.0607V26.0607Z"
+            fill="black"
+          />
+        </svg>
+      </SocialLink>
+      <SocialLink href="https://github.com/heritier-kodehode">
+        <svg
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g clipPath="url(#clip0_118_22)">
+            <path
+              d="M15.9857 0.439285C7.15357 0.435713 0 7.58571 0 16.4107C0 23.3893 4.475 29.3214 10.7071 31.5C11.5464 31.7107 11.4179 31.1143 11.4179 30.7071V27.9393C6.57143 28.5071 6.375 25.3 6.05 24.7643C5.39286 23.6429 3.83929 23.3571 4.30357 22.8214C5.40714 22.2536 6.53214 22.9643 7.83571 24.8893C8.77857 26.2857 10.6179 26.05 11.55 25.8179C11.7536 24.9786 12.1893 24.2286 12.7893 23.6464C7.76786 22.7464 5.675 19.6821 5.675 16.0393C5.675 14.2714 6.25714 12.6464 7.4 11.3357C6.67143 9.175 7.46786 7.325 7.575 7.05C9.65 6.86428 11.8071 8.53571 11.975 8.66786C13.1536 8.35 14.5 8.18214 16.0071 8.18214C17.5214 8.18214 18.8714 8.35714 20.0607 8.67857C20.4643 8.37143 22.4643 6.93571 24.3929 7.11071C24.4964 7.38571 25.275 9.19286 24.5893 11.325C25.7464 12.6393 26.3357 14.2786 26.3357 16.05C26.3357 19.7 24.2286 22.7679 19.1929 23.6536C19.6242 24.0777 19.9667 24.5836 20.2003 25.1416C20.4339 25.6996 20.554 26.2986 20.5536 26.9036V30.9214C20.5821 31.2429 20.5536 31.5607 21.0893 31.5607C27.4143 29.4286 31.9679 23.4536 31.9679 16.4143C31.9679 7.58571 24.8107 0.439285 15.9857 0.439285V0.439285Z"
+              fill="black"
+            />
+          </g>
+          <defs>
+            <clipPath id="clip0_118_22">
+              <rect width="32" height="32" fill="white" />
+            </clipPath>
+          </defs>
+        </svg>
+      </SocialLink>
+    </SocialDiv>
+  );
+}
+
+const ThumbUpDiv = styled.div`
+  background-color: white;
+  position: absolute;
+  display: ${(props) => (props.showThumbs ? "block" : "none")};
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 250px;
+  height: 250px;
+  border: 3px solid orange;
+  padding: 25px;
+`;
+
+function ThumbsUp(props) {
+  return (
+    <ThumbUpDiv showThumbs={props.showThumbs}>
+      <svg
+        width="154"
+        height="154"
+        viewBox="0 0 64 64"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M2.66669 56H13.3334V24H2.66669V56ZM61.3334 26.6667C61.3334 23.7333 58.9334 21.3333 56 21.3333H39.1734L41.7067 9.14667L41.7867 8.29334C41.7867 7.2 41.3334 6.18667 40.6134 5.46667L37.7867 2.66667L20.24 20.24C19.2534 21.2 18.6667 22.5333 18.6667 24V50.6667C18.6667 53.6 21.0667 56 24 56H48C50.2134 56 52.1067 54.6667 52.9067 52.7467L60.96 33.9467C61.2 33.3333 61.3334 32.6933 61.3334 32V26.9067L61.3067 26.88L61.3334 26.6667Z"
+          fill="black"
+        />
+      </svg>
+    </ThumbUpDiv>
+  );
+}
+
+export {
+  CssIcon,
+  HtmlIcon,
+  FigmaIcon,
+  JsIcon,
+  ArrowIcon,
+  Arrows,
+  SocialIcons,
+  ThumbsUp,
+};

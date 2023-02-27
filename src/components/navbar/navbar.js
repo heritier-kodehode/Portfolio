@@ -1,28 +1,116 @@
-import React, { useContext } from "react";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
-import { Context } from "../../App";
-const Button = styled.button``;
+import React, { useContext } from 'react';
+import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
+import { Context } from '../../App';
+import { langDataEng } from '../../data/projectsData';
+
+const Button = styled.button`
+  border: 1px solid black;
+  border-radius: 4px;
+  margin: 0 5px;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  &:hover {
+    background-color: blue;
+    color: white;
+  }
+  &:active {
+    border: 1px solid white;
+  }
+`;
+const LangBtn = styled.button`
+  font-size: 13px;
+  border: none;
+  padding: 0 5px;
+  cursor: pointer;
+  border: 1px solid palevioletred;
+  background-color: ${(props) =>
+    props.activeLang === langDataEng ? 'white' : 'red'};
+`;
+const LangBtnSecond = styled.button`
+  font-size: 13px;
+  border: none;
+  padding: 0 5px;
+  cursor: pointer;
+  border: 1px solid palevioletred;
+  background-color: ${(props) =>
+    props.activeLang === langDataEng ? 'red' : 'white'};
+`;
+const LangText = styled.span`
+  font-size: 13px;
+  border: none;
+  padding: 0 5px;
+  font-weight: 900;
+  color: red;
+  text-decoration: underline;
+`;
+const NavLinkStyled = styled(NavLink)`
+  border: 1px solid black;
+  border-radius: 4px;
+  margin: 0 5px;
+  padding: 1rem;
+  font-size: 1.5rem;
+  &:hover {
+    color: white;
+    background-color: blue;
+  }
+`;
+
 export default function Navbar() {
-  const showOrHide = useContext(Context);
+  const { showContact, setShowContact, langData, handleLanguage } =
+    useContext(Context);
+
+  const navLinkStyles = ({ isActive }) => {
+    return {
+      backgroundColor: isActive ? 'blue' : '#B2FFF5',
+      color: isActive ? 'white' : 'blue',
+    };
+  };
+
   return (
-    <div className="header">
-      <ul className="navbar">
-        <li>
-          <Link to="/">About</Link>
-        </li>
-        <li>
-          <Link to="/projects">Projects</Link>
-        </li>
-        <li>
-          <Button
-            onClick={() => {
-              showOrHide.setShowContact(!showOrHide.showContact);
-            }}
-          >
-            Contact Me
-          </Button>
-        </li>
+    <div className='header'>
+      <langDiv>
+        <LangText>Lang</LangText>
+        <LangBtnSecond
+          onClick={(e) => {
+            handleLanguage(e);
+          }}
+          id='engLang'
+          activeLang={langData}
+        >
+          English
+        </LangBtnSecond>
+        <LangBtn
+          onClick={(e) => {
+            handleLanguage(e);
+          }}
+          id='nokLang'
+          activeLang={langData}
+        >
+          Norsk
+        </LangBtn>
+      </langDiv>
+
+      <ul className='navbar'>
+        <NavLinkStyled style={navLinkStyles} to='/'>
+          {langData.navBar[0].text}
+        </NavLinkStyled>
+
+        <NavLinkStyled style={navLinkStyles} to='/projects'>
+          {langData.navBar[1].text}
+        </NavLinkStyled>
+
+        <Button
+          active={showContact}
+          onClick={() => {
+            setShowContact(!showContact);
+          }}
+        >
+          {langData.navBar[2].text}
+        </Button>
       </ul>
     </div>
   );

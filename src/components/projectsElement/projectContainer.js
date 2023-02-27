@@ -34,7 +34,7 @@ export default function ProjectContainerDemo(props) {
   return (
     <ProjectContainerDiv className="projectDemo">
       <img className="projectImg" src={props.gif} alt="projectdemo" />
-      <ButtonLink href={props.link}>Visit Site</ButtonLink>
+      <ButtonLink href={props.link}>{props.linkText}</ButtonLink>
     </ProjectContainerDiv>
   );
 }

@@ -1,27 +1,24 @@
-import React from "react";
+import React, { useContext } from 'react';
+import { Context } from '../App';
 import {
   CssIcon,
   HtmlIcon,
   FigmaIcon,
   JsIcon,
   ArrowIcon,
-} from "../components/iconssvg/icons";
-import styled from "styled-components";
-import audioGif from "../images/audiofile-3-d.gif";
-import blogr from "../images/blogr";
-import crowdFund from "../images/crowfundgif";
-import Planetarium from "../images/planetarium.gif";
-import {
-  ProjectContainer,
-  ProjectContainerDemo,
-} from "../components/projectsElement/projectContainer";
-import profileimg from "../images/image.png";
+} from '../components/iconssvg/icons';
+import styled from 'styled-components';
+import audioGif from '../images/audiofile-3-d.gif';
+
+import Planetarium from '../images/planetarium.gif';
+import { ProjectContainerDemo } from '../components/projectsElement/projectContainer';
+import profileimg from '../images/image.png';
 import {
   CostumeH1,
   CostumeParaghraph,
-} from "../components/typography/typegraphs";
-import { Link } from "react-router-dom";
-import { Button } from "../components/footer/footer";
+} from '../components/typography/typegraphs';
+import { Link } from 'react-router-dom';
+import { Button } from '../components/footer/footer';
 const TomatoButton = styled(Button)`
   color: White;
   background-color: #fa9e15;
@@ -36,17 +33,19 @@ const TomatoButton = styled(Button)`
 `;
 
 function Home() {
+  const { langData } = useContext(Context);
   return (
-    <section className="home">
-      <div className="homeBanner">
-        <img src={profileimg} className="profile_img" alt="profile  of user" />
+    <section className='home'>
+      <div className='homeBanner'>
+        <img src={profileimg} className='profile_img' alt='profile  of user' />
 
-        <div className="intro-text">
-          <h2 className="title">
-            Hei, velkomen til min <span>portfolio</span>!
+        <div className='intro-text'>
+          <h2 className='title'>
+            {langData.introText[0].text}{' '}
+            <span>{langData.introText[1].text}</span>
           </h2>
           <div>
-            <div className="icons">
+            <div className='icons'>
               <HtmlIcon />
               <CssIcon />
               <JsIcon />
@@ -57,25 +56,27 @@ function Home() {
         </div>
       </div>
 
-      <section id="about">
-        <CostumeH1 text="About" />
-        <CostumeParaghraph text="Fokuset mitt ligger på HTML, CSS og JavaScript, spesielt når det kommer til brukergrensesnitt. Jeg liker å utvikle meg og er veldig motivert. Jeg liker å bruke mine kreative ferdigheter til å vokse i jobbene jeg gjør og å vokse som kollega. Jeg er glad i en utfording og bruker ferdighetene mine til å komme opp med nye ideer. Jeg er en person som liker å lære og kan sette meg inn i nye temaer og systemer fort." />
+      <section id='about'>
+        <CostumeH1 text={langData.sectionTitle[0].text} />
+        <CostumeParaghraph text={langData.aboutIntrotext[0].text} />
       </section>
-      <section id="highlight">
-        <CostumeH1 text="Highlighted projects" />
-        <div className="project-s-Container">
+      <section id='highlight'>
+        <CostumeH1 text={langData.sectionTitle[1].text} />
+        <div className='project-s-Container'>
           <ProjectContainerDemo
             gif={audioGif}
-            link="https://sharp-visvesvaraya-224a23.netlify.app/"
+            link='https://sharp-visvesvaraya-224a23.netlify.app/'
+            linkText={langData.projectText[0].text}
           />
           <ProjectContainerDemo
             gif={Planetarium}
-            link="https://aleksander-kodehode.github.io/planetarium/#/home"
+            link='https://aleksander-kodehode.github.io/planetarium/#/home'
+            linkText={langData.projectText[0].text}
           />
         </div>
 
-        <Link to="/projects">
-          <TomatoButton>More Projects</TomatoButton>
+        <Link to='/projects'>
+          <TomatoButton>{langData.buttonText[0].text}</TomatoButton>
         </Link>
       </section>
     </section>

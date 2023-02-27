@@ -26,15 +26,15 @@ export const Button = styled.button`
 `;
 
 function Footer() {
-  const showOrHide = useContext(Context);
+  const { setShowContact, showContact, langData } = useContext(Context);
   return (
     <Div>
       <Button
         onClick={() => {
-          showOrHide.setShowContact(!showOrHide.showContact);
+          setShowContact(!showContact);
         }}
       >
-        Contact Me
+        {langData.buttonText[1].text}
       </Button>
     </Div>
   );
