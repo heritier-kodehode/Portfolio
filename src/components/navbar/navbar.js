@@ -59,6 +59,8 @@ const NavLinkStyled = styled(NavLink)`
   }
 `;
 
+const LangDiv = styled.div``;
+
 export default function Navbar() {
   const { showContact, setShowContact, langData, handleLanguage } =
     useContext(Context);
@@ -72,7 +74,7 @@ export default function Navbar() {
 
   return (
     <div className='header'>
-      <langDiv>
+      <LangDiv>
         <LangText>Lang</LangText>
         <LangBtnSecond
           onClick={(e) => {
@@ -92,7 +94,7 @@ export default function Navbar() {
         >
           Norsk
         </LangBtn>
-      </langDiv>
+      </LangDiv>
 
       <ul className='navbar'>
         <NavLinkStyled style={navLinkStyles} to='/'>

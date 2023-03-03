@@ -5,14 +5,14 @@ import {
   HtmlIcon,
   FigmaIcon,
   JsIcon,
-  ArrowIcon,
+  ReactIcon,
 } from '../components/iconssvg/icons';
 import styled from 'styled-components';
 import audioGif from '../images/audiofile-3-d.gif';
 
 import Planetarium from '../images/planetarium.gif';
 import { ProjectContainerDemo } from '../components/projectsElement/projectContainer';
-import profileimg from '../images/image.png';
+import profileimg from '../images/heritierimage.jpg';
 import {
   CostumeH1,
   CostumeParaghraph,
@@ -23,7 +23,7 @@ const TomatoButton = styled(Button)`
   color: White;
   background-color: #fa9e15;
   border: none;
-  margin: 0 auto;
+  margin: 2rem auto 0 auto;
   &:hover {
     cursor: pointer;
     background: #fff;
@@ -41,24 +41,27 @@ function Home() {
 
         <div className='intro-text'>
           <h2 className='title'>
-            {langData.introText[0].text}{' '}
+            {langData.introText[0].text}
             <span>{langData.introText[1].text}</span>
           </h2>
-          <div>
+          <div className='icons-container'>
             <div className='icons'>
               <HtmlIcon />
               <CssIcon />
               <JsIcon />
               <FigmaIcon />
+              <ReactIcon />
             </div>
-            <ArrowIcon />
           </div>
         </div>
       </div>
 
       <section id='about'>
         <CostumeH1 text={langData.sectionTitle[0].text} />
-        <CostumeParaghraph text={langData.aboutIntrotext[0].text} />
+        <CostumeParaghraph text={langData.aboutIntrotext[0]?.text} />
+        <CostumeParaghraph text={langData.aboutIntrotext[0]?.text2} />
+        <CostumeParaghraph text={langData.aboutIntrotext[0]?.text3} />
+        <CostumeParaghraph text={langData.aboutIntrotext[0]?.text4} />
       </section>
       <section id='highlight'>
         <CostumeH1 text={langData.sectionTitle[1].text} />
@@ -67,11 +70,15 @@ function Home() {
             gif={audioGif}
             link='https://sharp-visvesvaraya-224a23.netlify.app/'
             linkText={langData.projectText[0].text}
+            gitLinkText={langData.projectText[1].text}
+            gitLink='https://github.com/heritio/ecom-audio/tree/master/audiophiles-ecom'
           />
           <ProjectContainerDemo
             gif={Planetarium}
             link='https://aleksander-kodehode.github.io/planetarium/#/home'
             linkText={langData.projectText[0].text}
+            gitLinkText={langData.projectText[1].text}
+            gitLink='https://github.com/aleksander-kodehode/planetarium'
           />
         </div>
 
