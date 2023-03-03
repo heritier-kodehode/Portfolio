@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Portfolio/static/css/main.98a3ebdb.css",
-    "main.js": "/Portfolio/static/js/main.514086b4.js",
+    "main.js": "/Portfolio/static/js/main.9a2d981b.js",
     "static/js/787.1ed0c42c.chunk.js": "/Portfolio/static/js/787.1ed0c42c.chunk.js",
     "static/media/planetarium.gif": "/Portfolio/static/media/planetarium.be5bea74e5dc6b4c104b.gif",
     "static/media/audiofile-3-d.gif": "/Portfolio/static/media/audiofile-3-d.c3e39e8da3d02890eb76.gif",
@@ -10,16 +10,16 @@
     "static/media/3dcube.gif": "/Portfolio/static/media/3dcube.2e9d9933cbfc1ff8a31b.gif",
     "static/media/loopstudio.png": "/Portfolio/static/media/loopstudio.8858e943b648327b1d8b.png",
     "static/media/sunnyside.png": "/Portfolio/static/media/sunnyside.395e4de4325d60ca693a.png",
-    "static/media/image.png": "/Portfolio/static/media/image.01512d7c38d38ad502a5.png",
+    "static/media/heritierimage.jpg": "/Portfolio/static/media/heritierimage.00da7e8d705cc1d61ebb.jpg",
     "static/media/launchsoon.png": "/Portfolio/static/media/launchsoon.d3da68d0cbad948127cd.png",
     "static/media/pricing component.png": "/Portfolio/static/media/pricing component.5b6faab279dbd6fa3b22.png",
     "index.html": "/Portfolio/index.html",
     "main.98a3ebdb.css.map": "/Portfolio/static/css/main.98a3ebdb.css.map",
-    "main.514086b4.js.map": "/Portfolio/static/js/main.514086b4.js.map",
+    "main.9a2d981b.js.map": "/Portfolio/static/js/main.9a2d981b.js.map",
     "787.1ed0c42c.chunk.js.map": "/Portfolio/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.98a3ebdb.css",
-    "static/js/main.514086b4.js"
+    "static/js/main.9a2d981b.js"
   ]
 }
