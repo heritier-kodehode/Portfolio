@@ -10,12 +10,13 @@ export const langDataEng = {
   ],
   aboutIntrotext: [
     {
-      text: 'I am a Full-Stack Developer with a focus on HTML, CSS, JavaScript, React, and implementation of new technologies that can complement the tech stack in use. I can be contacted via email at heritier.kodehode@gmail.com.',
-      text2: 'Currently, I work as a Front-End Developer at Medretur since 2022, where my responsibilities include planning and holding meetings, developing UX/UI with React, and backend with Firebase and other CMS systems.',
-      text3: 'From 2022 to 2022, I worked as a Front-End Developer for Jobloop, where I developed a Planetarium with a team of three. I also developed the codebase with Github branches, set up the development environment, and developed and maintained a chat app.',
-      text4: 'From 2017 to 2022, I worked as a Freelance Front-End Developer. My responsibilities included fixing bugs on the front-end, implementing paywalls with Stripe, holding meetings with the front-end team to explore weaknesses in the system, inspecting code for refactoring and optimization.',
-    },
+      text: "As a developer with experience in Full-Stack development, specializing in HTML, CSS, JavaScript, and React, I also pursue part-time studies in electronic and robotics engineering. Alongside my studies, I'm proficient in Python and MATLAB/Simulink and have expertise in LaTeX for document preparation. You can reach me at herri2293@gmail.com",
+      text2: "In my professional journey, I've worked as a Front-end developer at Vigilo and Medretur, contributing to UX/UI development with React.",
+      text3: "At Jobloop, I collaborated on a planetarium project, managing codebases on Github and spearheading the development of a chat app.",
+      text4: "Before that, while freelancing, I addressed front-end bugs, integrated paywalls with Stripe, and optimized codebases through meetings and code inspections."
+    }
   ],
+
 
   projectText: [{ text: 'Visit site' }, { text: 'See Code' }],
   buttonText: [{ text: 'More Projects' }, { text: 'Contact Me' }],
@@ -52,12 +53,13 @@ export const langDataNok = {
   ],
   aboutIntrotext: [
     {
-      text: 'Jeg er en Full-Stack-utvikler med fokus på HTML, CSS, JavaScript, React og implementering av nye teknologier som kan komplementere teknologistakken som brukes. Jeg kan kontaktes via e-post på heritier.kodehode@gmail.com.',
-      text2: 'For øyeblikket jobber jeg som front-end-utvikler hos Medretur siden 2022, hvor mine ansvarsområder inkluderer planlegging og avholdelse av møter, utvikling av UX/UI med React, og backend med Firebase og andre CMS-systemer.',
-      text3: 'Fra 2022 til 2022 jobbet jeg som front-end-utvikler for Jobloop, hvor jeg utviklet et planetarium med et team på tre. Jeg utviklet også kodebasen med Github-grenser, satt opp utviklingsmiljøet, og utviklet og vedlikeholdt en chatt-app.',
-      text4: 'Fra 2017 til 2022 jobbet jeg som frilans front-end-utvikler. Mine ansvarsområder inkluderte å fikse feil på front-end, implementere betalingsløsninger med Stripe, holde møter med front-end-teamet for å utforske svakheter i systemet, og inspisere kode for refaktorisering og optimalisering.',
-    },
+      text: "Som utvikler med erfaring innen Full-Stack-utvikling, med spesialisering i HTML, CSS, JavaScript og React, forfølger jeg også deltidsstudier innen elektronikk og robotteknikk. Ved siden av studiene mine er jeg dyktig i Python og MATLAB/Simulink og har ekspertise i LaTeX for dokumentforberedelse. Du kan kontakte meg på herri2293@gmail.com",
+      text2: "I min profesjonelle karriere har jeg jobbet som front-end-utvikler hos Vigilo og Medretur, hvor jeg har bidratt til UX/UI-utvikling med React.",
+      text3: "Hos Jobloop samarbeidet jeg om et planetariumprosjekt, hvor jeg håndterte kodebaser på Github og ledet utviklingen av en chatt-app.",
+      text4: "Før dette, mens jeg jobbet som frilanser, håndterte jeg front-end-feil, integrerte betalingsløsninger med Stripe, og optimaliserte kodebaser gjennom møter og kodeinspeksjoner."
+    }
   ],
+
 
   projectText: [{ text: 'Besøk Side' }, { text: 'Se Koden' }],
   buttonText: [{ text: 'Flere prosjekter' }, { text: 'Kontakt Meg' }],
